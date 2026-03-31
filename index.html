@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creativio Review | Design Better in Half the Time</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Tailwind Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8A2BE2',
+                        'primary-dark': '#7020b3',
+                        'light-purple': '#F5E6FF',
+                        charcoal: '#2D2D2D',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-light-purple text-charcoal overflow-x-hidden relative">
+
+    <!-- Parallax 3D Background Text -->
+    <div class="parallax-bg fixed top-[20%] left-0 w-full text-[20vw] font-extrabold text-[rgba(138,43,226,0.05)] whitespace-nowrap pointer-events-none -z-10 select-none leading-none" id="parallaxText">
+        CREATIVIO
+    </div>
+
+    <!-- Header / Navbar - FULLY CLICKABLE -->
+    <nav class="bg-light-purple/80 backdrop-blur-md border-b border-primary/10 sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Clickable Logo -->
+                <a href="#home" class="text-3xl font-extrabold text-charcoal no-underline tracking-tight hover:text-primary transition-colors cursor-pointer" id="home-link">
+                    Creativio<span class="text-primary">.</span>
+                </a>
+                
+                <!-- Desktop Menu - Clickable Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-charcoal font-medium hover:text-primary transition relative group cursor-pointer">
+                        Home
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#features" class="nav-link text-charcoal font-medium hover:text-primary transition relative group cursor-pointer">
+                        Features
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#how-it-works" class="nav-link text-charcoal font-medium hover:text-primary transition relative group cursor-pointer">
+                        How It Works
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#pricing" class="nav-link text-charcoal font-medium hover:text-primary transition relative group cursor-pointer">
+                        Pricing
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#contact" class="nav-link text-charcoal font-medium hover:text-primary transition relative group cursor-pointer">
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <!-- Sign In Button - Clickable -->
+                    <a href="#signin" class="bg-primary text-white px-5 py-2 rounded-full font-semibold hover:bg-primary-dark hover:-translate-y-1 transition-all duration-300 shadow-md cursor-pointer">
+                        Sign In <i class="fas fa-arrow-right ml-1 text-sm"></i>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-primary text-2xl cursor-pointer" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu Dropdown - Clickable Links -->
+            <div class="md:hidden hidden mt-4 pb-4 space-y-3" id="mobileMenu">
+                <a href="#home" class="mobile-nav-link block py-2 px-3 text-charcoal font-medium hover:bg-primary/10 hover:text-primary rounded-lg transition cursor-pointer">Home</a>
+                <a href="#features" class="mobile-nav-link block py-2 px-3 text-charcoal font-medium hover:bg-primary/10 hover:text-primary rounded-lg transition cursor-pointer">Features</a>
+                <a href="#how-it-works" class="mobile-nav-link block py-2 px-3 text-charcoal font-medium hover:bg-primary/10 hover:text-primary rounded-lg transition cursor-pointer">How It Works</a>
+                <a href="#pricing" class="mobile-nav-link block py-2 px-3 text-charcoal font-medium hover:bg-primary/10 hover:text-primary rounded-lg transition cursor-pointer">Pricing</a>
+                <a href="#contact" class="mobile-nav-link block py-2 px-3 text-charcoal font-medium hover:bg-primary/10 hover:text-primary rounded-lg transition cursor-pointer">Contact</a>
+                <a href="#signin" class="block py-2 px-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition cursor-pointer text-center">Sign In</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section with Image instead of 3D box -->
+        <section id="home" class="py-12 md:py-20 scroll-mt-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                            Design Better in <span class="highlight text-primary relative inline-block">Half the Time.</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-lg">
+                            Creativio turns your rough sketches and ideas into polished, editable designs instantly. No prompting required. Just pure creativity.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-4 mb-8">
+                            <a href="#signup" class="btn-primary bg-primary text-white px-8 py-4 rounded-full font-semibold no-underline inline-flex items-center shadow-lg hover:bg-primary-dark hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                                Start Creating Free <i class="fas fa-rocket ml-2"></i>
+                            </a>
+                            <a href="#demo" class="btn-outline border-2 border-primary text-primary px-8 py-4 rounded-full font-semibold no-underline inline-flex items-center gap-2 hover:bg-primary hover:text-white hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                                <i class="fas fa-play-circle"></i> Watch Demo
+                            </a>
+                        </div>
+                        
+                        <!-- Micro Feedback -->
+                        <div class="flex items-center gap-4">
+                            <div class="flex -space-x-3">
+                                <img src="https://i.pravatar.cc/40?u=1" alt="User" class="w-10 h-10 rounded-full border-3 border-light-purple hover:-translate-y-1 transition-transform cursor-pointer">
+                                <img src="https://i.pravatar.cc/40?u=2" alt="User" class="w-10 h-10 rounded-full border-3 border-light-purple hover:-translate-y-1 transition-transform cursor-pointer">
+                                <img src="https://i.pravatar.cc/40?u=3" alt="User" class="w-10 h-10 rounded-full border-3 border-light-purple hover:-translate-y-1 transition-transform cursor-pointer">
+                                <img src="https://i.pravatar.cc/40?u=4" alt="User" class="w-10 h-10 rounded-full border-3 border-light-purple hover:-translate-y-1 transition-transform cursor-pointer">
+                            </div>
+                            <p class="text-gray-700"><span class="font-bold text-primary">5,000+</span> designers joined this month</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Hero Image - REPLACED 3D BOX WITH IMAGE -->
+                    <div class="relative flex justify-center items-center">
+                        <!-- Main Hero Image -->
+                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                             alt="Designer working on tablet" 
+                             class="rounded-3xl shadow-2xl w-full max-w-md animate-float object-cover h-[350px] md:h-[400px]">
+                        
+                        <!-- Floating UI Elements -->
+                        <div class="absolute -top-6 -right-6 bg-white p-4 rounded-2xl shadow-xl animate-pulse-slow cursor-pointer hover:scale-105 transition-transform">
+                            <i class="fas fa-paint-brush text-primary text-2xl"></i>
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 bg-white p-4 rounded-2xl shadow-xl animate-pulse-slow delay-1000 cursor-pointer hover:scale-105 transition-transform">
+                            <i class="fas fa-magic text-primary text-2xl"></i>
+                        </div>
+                        <div class="absolute top-1/2 -right-8 bg-white p-3 rounded-2xl shadow-xl animate-pulse-slow delay-500 cursor-pointer hover:scale-105 transition-transform">
+                            <i class="fas fa-layer-group text-primary text-xl"></i>
+                        </div>
+                        
+                        <!-- Badge -->
+                        <div class="absolute bottom-10 -right-4 bg-primary text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                            <i class="fas fa-star mr-1"></i> 4.9/5
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof / Client Logos - Clickable -->
+        <section class="py-12 bg-white/30 backdrop-blur-sm border-y border-primary/15">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <p class="text-center uppercase tracking-widest text-sm text-gray-500 mb-8">Trusted by innovative teams worldwide</p>
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                    <a href="#" class="flex items-center gap-2 text-gray-600 hover:text-primary hover:scale-105 transition-all cursor-pointer no-underline">
+                        <i class="fab fa-microsoft text-xl"></i> Microsoft
+                    </a>
+                    <a href="#" class="flex items-center gap-2 text-gray-600 hover:text-primary hover:scale-105 transition-all cursor-pointer no-underline">
+                        <i class="fab fa-google text-xl"></i> Google
+                    </a>
+                    <a href="#" class="flex items-center gap-2 text-gray-600 hover:text-primary hover:scale-105 transition-all cursor-pointer no-underline">
+                        <i class="fab fa-apple text-xl"></i> Apple
+                    </a>
+                    <a href="#" class="flex items-center gap-2 text-gray-600 hover:text-primary hover:scale-105 transition-all cursor-pointer no-underline">
+                        <i class="fab fa-amazon text-xl"></i> Amazon
+                    </a>
+                    <a href="#" class="flex items-center gap-2 text-gray-600 hover:text-primary hover:scale-105 transition-all cursor-pointer no-underline">
+                        <i class="fab fa-meta text-xl"></i> Meta
+                    </a>
+                    <a href="#" class="flex items-center gap-2 text-gray-600 hover:text-primary hover:scale-105 transition-all cursor-pointer no-underline">
+                        <i class="fab fa-netflix text-xl"></i> Netflix
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20 scroll-mt-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold tracking-wider mb-4">FEATURES</span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Do More of <span class="highlight text-primary relative inline-block">What You Love.</span></h2>
+                    <p class="text-lg text-gray-600">Stop wrestling with complicated tools. Start creating masterpieces.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Feature 1 with Image -->
+                    <div class="feature-card bg-white/60 backdrop-blur-md rounded-3xl overflow-hidden border border-white/90 shadow-[0_20px_40px_rgba(138,43,226,0.05)] hover:-translate-y-4 hover:shadow-[0_30px_60px_rgba(138,43,226,0.15)] hover:border-primary transition-all duration-500 cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Sketch to Design" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <div class="feature-icon w-[60px] h-[60px] bg-primary rounded-2xl flex items-center justify-center mb-6 shadow-[0_15px_30px_rgba(138,43,226,0.3)] -mt-12 border-4 border-white">
+                                <i class="fas fa-pencil-alt text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Sketch to Design in Seconds</h3>
+                            <p class="text-gray-600 mb-4">Upload a napkin doodle or wireframe and get a fully layered, editable design file instantly.</p>
+                            <a href="#" class="text-primary font-semibold no-underline inline-flex items-center gap-2 hover:gap-3 transition-all cursor-pointer">
+                                Learn more <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature 2 with Image -->
+                    <div class="feature-card bg-white/60 backdrop-blur-md rounded-3xl overflow-hidden border border-white/90 shadow-[0_20px_40px_rgba(138,43,226,0.05)] hover:-translate-y-4 hover:shadow-[0_30px_60px_rgba(138,43,226,0.15)] hover:border-primary transition-all duration-500 cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Cloud Sync" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <div class="feature-icon w-[60px] h-[60px] bg-primary rounded-2xl flex items-center justify-center mb-6 shadow-[0_15px_30px_rgba(138,43,226,0.3)] -mt-12 border-4 border-white">
+                                <i class="fas fa-cloud-upload-alt text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Your Workspace, Anywhere</h3>
+                            <p class="text-gray-600 mb-4">Cloud-native means your projects are always in sync across all your devices.</p>
+                            <a href="#" class="text-primary font-semibold no-underline inline-flex items-center gap-2 hover:gap-3 transition-all cursor-pointer">
+                                Learn more <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature 3 with Image -->
+                    <div class="feature-card bg-white/60 backdrop-blur-md rounded-3xl overflow-hidden border border-white/90 shadow-[0_20px_40px_rgba(138,43,226,0.05)] hover:-translate-y-4 hover:shadow-[0_30px_60px_rgba(138,43,226,0.15)] hover:border-primary transition-all duration-500 cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Vector Editing" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <div class="feature-icon w-[60px] h-[60px] bg-primary rounded-2xl flex items-center justify-center mb-6 shadow-[0_15px_30px_rgba(138,43,226,0.3)] -mt-12 border-4 border-white">
+                                <i class="fas fa-vector-square text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Pixel-Perfect Edits, Zero Fuss</h3>
+                            <p class="text-gray-600 mb-4">Clean vectors and smart layers that behave exactly how you expect them to.</p>
+                            <a href="#" class="text-primary font-semibold no-underline inline-flex items-center gap-2 hover:gap-3 transition-all cursor-pointer">
+                                Learn more <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works (Gap Fix) with Images -->
+        <section id="how-it-works" class="py-20 bg-primary/3 rounded-[60px] mx-4 md:mx-8 scroll-mt-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold tracking-wider mb-4">PROCESS</span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">From Concept to Creation in <span class="highlight text-primary relative inline-block">3 Simple Steps</span></h2>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Step 1 with Image -->
+                    <div class="text-center group cursor-pointer">
+                        <div class="relative mb-6 overflow-hidden rounded-2xl">
+                            <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                 alt="Upload Sketch" 
+                                 class="w-full h-48 object-cover rounded-2xl group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 w-12 h-12 bg-primary text-white text-2xl font-extrabold rounded-full flex items-center justify-center shadow-lg">
+                                1
+                            </div>
+                        </div>
+                        <div class="text-primary text-3xl mb-3">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Upload Your Sketch</h3>
+                        <p class="text-gray-600">Take a photo of your wireframe, doodle, or napkin sketch and upload it.</p>
+                    </div>
+                    
+                    <!-- Step 2 with Image -->
+                    <div class="text-center group cursor-pointer">
+                        <div class="relative mb-6 overflow-hidden rounded-2xl">
+                            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                 alt="AI Enhancement" 
+                                 class="w-full h-48 object-cover rounded-2xl group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 w-12 h-12 bg-primary text-white text-2xl font-extrabold rounded-full flex items-center justify-center shadow-lg">
+                                2
+                            </div>
+                        </div>
+                        <div class="text-primary text-3xl mb-3">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">AI Enhancement</h3>
+                        <p class="text-gray-600">Our engine cleans lines, adds colors, and creates organized layers automatically.</p>
+                    </div>
+                    
+                    <!-- Step 3 with Image -->
+                    <div class="text-center group cursor-pointer">
+                        <div class="relative mb-6 overflow-hidden rounded-2xl">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                 alt="Polish & Perfect" 
+                                 class="w-full h-48 object-cover rounded-2xl group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 w-12 h-12 bg-primary text-white text-2xl font-extrabold rounded-full flex items-center justify-center shadow-lg">
+                                3
+                            </div>
+                        </div>
+                        <div class="text-primary text-3xl mb-3">
+                            <i class="fas fa-pen-fancy"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Polish & Perfect</h3>
+                        <p class="text-gray-600">Fine-tune the result in our powerful yet intuitive editor.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials with Images -->
+        <section class="py-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold tracking-wider mb-4">TESTIMONIALS</span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Loved by <span class="highlight text-primary relative inline-block">Creative Professionals</span></h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card bg-white rounded-3xl p-8 md:p-10 shadow-[0_20px_40px_rgba(138,43,226,0.1)] hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                        <div class="flex items-center gap-4 mb-6">
+                            <img src="https://images.unsplash.com/photo-1494790108777-286b11e5b5b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                 alt="Sarah Chen" 
+                                 class="w-16 h-16 rounded-full object-cover border-4 border-primary/20">
+                            <div>
+                                <h4 class="font-bold text-lg">Sarah Chen</h4>
+                                <p class="text-sm text-gray-500">Lead Product Designer, Stripe</p>
+                            </div>
+                        </div>
+                        <div class="text-yellow-400 mb-4 text-lg">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-lg italic">"Creativio cut my wireframing time by 60%. I can now iterate through 10 designs in the time it used to take for one. Absolutely game-changing."</p>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card bg-white rounded-3xl p-8 md:p-10 shadow-[0_20px_40px_rgba(138,43,226,0.1)] hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                        <div class="flex items-center gap-4 mb-6">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                 alt="Marcus Rodriguez" 
+                                 class="w-16 h-16 rounded-full object-cover border-4 border-primary/20">
+                            <div>
+                                <h4 class="font-bold text-lg">Marcus Rodriguez</h4>
+                                <p class="text-sm text-gray-500">Creative Director, IDEO</p>
+                            </div>
+                        </div>
+                        <div class="text-yellow-400 mb-4 text-lg">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-lg italic">"Finally, a tool that understands creative workflow. The sketch-to-design feature alone saves our team hours of grunt work every week."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Preview with Image -->
+        <section id="pricing" class="py-12 scroll-mt-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="pricing-card bg-gradient-to-br from-primary to-[#b87cf7] rounded-[50px] p-8 md:p-12 shadow-[0_40px_70px_rgba(138,43,226,0.4)]">
+                    <div class="grid lg:grid-cols-2 gap-8 items-center">
+                        <div class="text-white">
+                            <span class="inline-block bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold tracking-wider mb-4">SIMPLE PRICING</span>
+                            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">Start for free,<br>scale as you grow.</h2>
+                            <ul class="space-y-4 mb-8">
+                                <li class="flex items-center gap-3 text-lg"><i class="fas fa-check-circle"></i> 3 free projects per month</li>
+                                <li class="flex items-center gap-3 text-lg"><i class="fas fa-check-circle"></i> All AI features included</li>
+                                <li class="flex items-center gap-3 text-lg"><i class="fas fa-check-circle"></i> Export in all formats</li>
+                                <li class="flex items-center gap-3 text-lg"><i class="fas fa-check-circle"></i> Community support</li>
+                            </ul>
+                            <a href="#signup" class="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-full font-semibold no-underline hover:bg-gray-100 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                                See all plans <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="flex justify-center">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                 alt="Pricing plans" 
+                                 class="rounded-3xl shadow-2xl max-w-sm w-full animate-float">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section id="contact" class="py-20 scroll-mt-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="cta-card bg-white rounded-[60px] p-8 md:p-16 shadow-[0_40px_80px_rgba(138,43,226,0.2)] text-center max-w-4xl mx-auto">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         alt="Team collaboration" 
+                         class="w-32 h-32 rounded-full object-cover mx-auto mb-6 border-4 border-primary/20">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Join 5,000+ Designers Working Smarter</h2>
+                    <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">Stop fighting with complex software. Experience the fastest way from concept to creation. No credit card required.</p>
+                    
+                    <form class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto mb-8" onsubmit="event.preventDefault(); alert('Trial claimed! (Demo)');">
+                        <input type="email" placeholder="Enter your work email" class="flex-1 px-6 py-4 border-2 border-gray-200 rounded-full focus:border-primary focus:outline-none transition-all" required>
+                        <button type="submit" class="bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-primary-dark hover:-translate-y-1 transition-all duration-300 shadow-lg cursor-pointer">
+                            Claim Free Trial
+                        </button>
+                    </form>
+                    
+                    <div class="flex flex-wrap justify-center gap-4 md:gap-8 text-gray-500 mb-6">
+                        <span><i class="fas fa-shield-alt text-primary mr-2"></i>No credit card required</span>
+                        <span><i class="fas fa-clock text-primary mr-2"></i>Cancel anytime</span>
+                        <span><i class="fas fa-star text-primary mr-2"></i>4.9/5 from 300+ reviews</span>
+                    </div>
+                    
+                    <div class="flex justify-center gap-6 text-sm text-gray-400 uppercase tracking-wider">
+                        <span>GDPR Compliant</span>
+                        <span>SSL Secure</span>
+                        <span>99.9% Uptime</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-charcoal text-white pt-16 pb-8 rounded-t-[60px] mt-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
+                <div class="lg:col-span-2">
+                    <a href="#home" class="text-3xl font-extrabold text-white no-underline tracking-tight inline-block mb-4 hover:text-primary transition-colors cursor-pointer">
+                        Creativio<span class="text-primary">.</span>
+                    </a>
+                    <p class="text-gray-400 mb-6 max-w-md">The fastest way from sketch to screen. Used by top designers worldwide.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="social-link w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary hover:-translate-y-1 transition-all cursor-pointer"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary hover:-translate-y-1 transition-all cursor-pointer"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary hover:-translate-y-1 transition-all cursor-pointer"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary hover:-translate-y-1 transition-all cursor-pointer"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h5 class="font-bold text-white mb-4">Product</h5>
+                    <ul class="space-y-3">
+                        <li><a href="#features" class="text-gray-400 hover:text-primary transition no-underline cursor-pointer">Features</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-primary transition no-underline cursor-pointer">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition no-underline cursor-pointer">Integrations</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition no-underline cursor-pointer">Changelog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="font-bold text-white mb-4">Resources</h5>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition no-underline cursor-pointer">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition no-underline cursor-pointer">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition no-underline cursor-pointer">Community</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-primary transition no-underline cursor-pointer">Support</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="font-bold text-white mb-4">Company</h5>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition no-underline cursor-pointer">About</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition no-underline cursor-pointer">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition no-underline cursor-pointer">Press</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-primary transition no-underline cursor-pointer">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="border-gray-800 my-8">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+                <p>© 2023 Creativio. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-primary transition no-underline cursor-pointer">Privacy</a>
+                    <a href="#" class="hover:text-primary transition no-underline cursor-pointer">Terms</a>
+                    <a href="#" class="hover:text-primary transition no-underline cursor-pointer">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script>
+        // Parallax Effect
+        window.addEventListener('scroll', function() {
+            const parallax = document.getElementById('parallaxText');
+            if (parallax) {
+                let scrollPosition = window.scrollY;
+                parallax.style.transform = 'translateX(' + (scrollPosition * 0.15 - 50) + 'px)';
+            }
+        });
+
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuBtn')?.addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobileMenu')?.classList.add('hidden');
+                }
+            });
+        });
+
+        // Active link highlighting
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('text-primary', 'font-bold');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-primary', 'font-bold');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
